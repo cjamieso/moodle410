@@ -1,0 +1,55 @@
+{{!
+This file is part of Moodle - http://moodle.org/
+
+Moodle is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Moodle is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+@template report_analytics/userpostschart
+
+Template for a user posts chart.
+
+Classes required for JS:
+* none
+
+Data attributes required for JS:
+* none
+
+Context variables required for this template:
+* chartname the name of the chart (Capital Case)
+* chartnamelower the name of the chart (all lower case)
+* time used to generate unique IDs
+* datefilter the HTML (moodle forms) for the date filter
+* presetdates {date, text}
+* activity {label, type, helptooltip, optgroup|options}
+* student {label, type, helptooltip, optgroup|options, attributes}
+* grade {items, operators, gradehelptooltip}
+* minwords {label, class, name, value}
+* maxwords {label, class, name, value}
+
+}}
+{{< report_analytics/activitychart }}
+
+{{$ advancedfilters }}
+    {{# minwords }}
+        {{> report_analytics/textboxfilter }}
+    {{/ minwords }}
+    {{# maxwords }}
+        {{> report_analytics/textboxfilter }}
+    {{/ maxwords }}
+{{/ advancedfilters }}
+
+{{$ footer }}
+{{/ footer }}
+
+{{/ report_analytics/activitychart }}

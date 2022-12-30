@@ -1,0 +1,37 @@
+img.faded {
+   opacity: 0.5;
+   filter: alpha(opacity=50);
+   zoom: 1;  /* needed to trigger "hasLayout" in IE if no width or height is set */
+}
+
+
+body.path-blocks-nurs_navigation .yui3-datatable-table{
+    margin:5px;
+    padding:5px;
+    font-family:arial,sans-serif;
+    border-collapse:separate;
+    border-spacing:0;
+    border:1px solid #cbcbcb;
+}
+
+body.path-blocks-nurs_navigation .yui3-datatable-header {
+    background: url([[pix:block_nurs_navigation|green]]) repeat-x scroll 50% 50% #007C41;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: none;
+    vertical-align: bottom;
+    white-space: nowrap;
+    font-size: 1em;
+    padding: 8px;
+}
+
+body.path-blocks-nurs_navigation.yui3-datatable-cell {
+    background-color: #FFFFFF;
+    border-bottom: 1.0px solid #CBCBCB;
+    font-size: 0.9em;
+}
+
+body.path-blocks-nurs_navigation .yui3-datatable-even, body.path-blocks-nurs_navigation .yui3-datatable-odd {
+    cursor: pointer;
+}

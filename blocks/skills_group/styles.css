@@ -1,0 +1,232 @@
+/*******************************************************************************
+* Modified YUI Styles
+*******************************************************************************/
+body.path-blocks-skills_group .yui3-datatable-header{
+    background: url([[pix:block_skills_group|green]]) repeat-x scroll 50% 50% #007C41;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: none;
+    vertical-align: bottom;
+    white-space: nowrap;
+    font-size: 1em;
+}
+
+body.path-blocks-skills_group #groups .yui3-datatable-cell, #viewgroup .yui3-datatable-cell{
+    background-color: #FFFFFF;
+    border-bottom: 1.0px solid #CBCBCB;
+    font-size: 0.9em;
+}
+
+body.path-blocks-skills_group #viewgroup .yui3-datatable-table{
+    margin:5px;
+    padding:5px;
+    font-family:arial,sans-serif;
+    border-collapse:separate;
+    border-spacing:0;
+    border:1px solid #cbcbcb;
+}
+
+body.path-blocks-skills_group .tdcenter {
+    text-align: center;
+}
+
+body.path-blocks-skills_group #viewgroup .yui3-datatable-table .yui3-datatable-header{
+    padding: 8px;
+}
+
+/*******************************************************************************
+* General styles
+*******************************************************************************/
+body.path-blocks-skills_group .clear {
+    clear: both;
+}
+
+body.path-blocks-skills_group .d3export {
+    width: 900px;
+}
+
+body.path-blocks-skills_group .d3chart {
+    width: 900px;
+}
+
+body.path-blocks-skills_group .joingroup {
+    cursor: pointer;
+}
+
+/*******************************************************************************
+* d3.js styles
+*******************************************************************************/
+body.path-blocks-skills_group .axis text {
+    font-size: 12px;
+}
+
+body.path-blocks-skills_group .axis path {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+body.path-blocks-skills_group .legend rect {
+    stroke-width: 2;
+}
+
+body.path-blocks-skills_group .legend text {
+    font: 10px sans-serif;
+}
+
+body.path-blocks-skills_group .tooltip {
+    background: #eee;
+    box-shadow: 0 0 5px #999999;
+    color: #333;
+    display: none;
+    font-size: 12px;
+    left: 430px;
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+    top: 220px;
+    width: 80px;
+    z-index: 10;
+}
+
+body.path-blocks-skills_group .d3-tip {
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+body.path-blocks-skills_group .d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+}
+
+/* Style northward tooltips differently */
+body.path-blocks-skills_group .d3-tip.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+}
+
+body.path-blocks-skills_group .spinner {
+    fill: #4D4D4D;
+}
+
+body.path-blocks-skills_group .d3title {
+    text-anchor: middle;
+    font-style: italic;
+    font-size: 14px;
+}
+
+/*******************************************************************************
+* Filter Layout
+*******************************************************************************/
+body.path-blocks-skills_group .filterheader .select {
+    width: 300px;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+body.path-blocks-skills_group .filterheader .select.single {
+    float: left;
+    padding: 4px ;
+    margin: 4px;
+}
+
+body.path-blocks-skills_group .filterheader {
+    display: inline-block;
+    background-color: #F5F5F5;
+    border: 1px solid #E3E3E3;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    width: 600px;
+}
+
+body.path-blocks-skills_group .filterheader .helptooltip {
+    float: left;
+    margin: 4px;
+    padding: 2px;
+}
+
+body.path-blocks-skills_group .chartheader .filterheader > label {
+    float: left;
+    margin: 4px 0 4px 4px;
+    padding: 4px 12px;
+    font-weight: bold;
+    min-width: 65px;
+}
+
+body.path-blocks-skills_group .chartheader .select label {
+    float: none;
+}
+
+body.path-blocks-skills_group .chartheader button {
+    margin: 5px;
+}
+
+body.path-blocks-skills_group .chartheader .d3button {
+    margin: 2px 0;
+}
+
+body.path-blocks-skills_group #chartcontainer .ms-drop {
+    margin-left: 5px;
+}
+
+body.path-blocks-skills_group #chartcontainer .ms-drop.bottom {
+    width: 320px;
+}
+
+body.path-blocks-skills_group #chartcontainer .ms-choice > div {
+    top: 5px;
+}
+
+body.path-blocks-skills_group .ms-choice > span {
+    padding-top: 4px;
+}
+
+body.path-blocks-skills_group input.exportbutton {
+    float: right;
+}
+
+body.path-blocks-skills_group .d3export img {
+    margin: 3px;
+    float: right;
+}
+
+body.path-blocks-skills_group .d3export img:hover {
+    cursor: pointer;
+}
+
+body.path-blocks-skills_group .precourseexport {
+    float: left;
+}
+
+body.path-blocks-skills_group .postcourseexport {
+    float: left;
+}
+
+body.path-blocks-skills_group .chartheader .filterheader .custom-select {
+    border: 0px solid;
+    background: none;
+}
+
+body.path-blocks-skills_group input.feedbackexport {
+    margin: 3px 5px 3px 0px;
+}
+
+body.path-blocks-skills_group .filterheader i.fa-question-circle {
+    font-size: 16px;
+    margin-top: 10px;
+}

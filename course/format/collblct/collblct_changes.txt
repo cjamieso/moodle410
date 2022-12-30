@@ -1,0 +1,73 @@
+Collapsed Topics -> Collapsed Topics with Collapsed Labels in lang files (and rename to format_collblct.php)
+rename /backup/moodle2/restore_format_topcoll_plugin.class.php to use "collblct" in the name
+rename /settopcollpref.php to use "collblct" in the name
+topcoll -> collblct in all files
+
+Add hooks to lang/en file (bottom)
+
+Move over extra files in amd folder -> {init_accordion.js, jquery.nestedAccordion.js}
+Copy over install.xml
+Move over code in upgrade.php (Commented with Craig's DB)
+Add capability for "collblct:caneditcollapsedlabelcolors" to access.php
+Copy over plus.gif and minus.gif from pix folder
+
+Copy over other files -> {collapsed_label_hooks.php, collapsed_menu.class.php, course_color_record.class.php,
+            course_section_record.class.php, edit_course_settings.php, label_info.class.php, locallib.php,
+            mod_depths.class.php, settings_edit_form.php, unittest.xml, new tests in tests folder}
+Copy over tests -> {collapsedmenu_test.php, collblctunittest.php, coursecolorrecord_test.php, coursesectionrecord_test.php
+            labelinfo_test.php, all files in behat folder}
+
+Merge changes into styles.css
+
+Add hooks to format.php
+Add hooks to renderer.php (require->jquery() + color edit link + section output)
+
+Copy over this file (collblct_changes.txt) and update instructions (if any)
+
+---
+
+Anthony's notes from 4.0 update: 
+
+-I followed the notes above to make the changes with the updated topcoll plugin in here. However there was some concerns:
+
+-unittest.xml did not exist in PROD_311 branch so that file might be long gone?
+
+-renderer.php changed significantly:
+
+        /*-------------------------------------------------------------------------->
+         * HOOK
+         *<------------------------------------------------------------------------*/
+        add_edit_color_link($controls);
+        /*-------------------------------------------------------------------------->
+         * END HOOK
+         *<------------------------------------------------------------------------*/
+-The hook above is part of a deprecated function that now sits in controlmenu.php
+
+
+        /*-------------------------------------------------------------------------->
+         * HOOK
+         *<------------------------------------------------------------------------*/
+        $cm = display_collapsed($course, $displaysection);
+        close_collapsed($cm, $displaysection);
+        /*-------------------------------------------------------------------------->
+         * END HOOK
+         *<------------------------------------------------------------------------*/
+-For the hook above to have an effect, I had to change the line above from a return to an echo, followed by the hook section. Could not test this though as we don't have an environment to deploy to yet.  
+
+        /*-------------------------------------------------------------------------->
+         * HOOK
+         *<------------------------------------------------------------------------*/
+        if (isset($sectiondisplayarray)) {
+            foreach ($sectiondisplayarray as $thissection) {
+                if ($thissection->uservisible) {
+                    $cm = display_collapsed($course, $thissection->section);
+                    close_collapsed($cm, $thissection->section);
+                }
+            }
+        }
+        /*-------------------------------------------------------------------------->
+         * END HOOK
+         *<------------------------------------------------------------------------*/
+-For the hook above to get reached, I had to move it up a line from the bottom so that the new return line below could still get called after (return $content;)
+
+-Overall, renderer seems to have changed quite a bit, perhaps trying out the 311 copy as a complete replacement might work if this doesn't? Or maybe Craig has some insite on what to do in here and can take a look or update it. I am not sure this is going to work as is once we have somewhere to deploy this to and can test it out. 

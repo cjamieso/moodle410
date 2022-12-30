@@ -1,0 +1,57 @@
+{{!
+This file is part of Moodle - http://moodle.org/
+
+Moodle is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Moodle is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+@template block_nurs_navigation/activity_table
+
+Template for the chart selector widget.
+
+Classes required for JS:
+* generaltable
+
+Data attributes required for JS:
+* none
+
+Context variables required for this template:
+* mods {section, name, visible, cmid, close}
+
+}}
+
+<table class="generaltable">
+    <thead>
+        <tr>
+            <th class="header c0" style="text-align:center;">{{# str }} section, moodle {{/ str }}</th>
+            <th class="header c1" style="text-align:left;">{{# str }} name, moodle {{/ str }}</th>
+            <th class="header c2" style="text-align:left;">{{# str }} closes, block_nurs_navigation {{/ str }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{# mods }}
+            <tr>
+                <td class="cell c0" style="text-align:center;">{{section}}</td>
+                <td class="cell c1" style="text-align:left;">
+                {{# visible }}
+                    <a href="/mod/{{{type}}}/view.php?id={{{cmid}}}">{{name}}</a>
+                {{/ visible }}
+                {{^ visible }}
+                    <div class="dimmed dimmed_text">{{name}}</div>
+                {{/ visible }}
+                </td>
+                <td class="cell c2 lastcol" style="text-align:left;">{{close}}</td>
+            </tr>
+        {{/ mods }}
+    </tbody>
+</table>

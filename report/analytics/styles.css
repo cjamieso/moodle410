@@ -1,0 +1,635 @@
+/*******************************************************************************
+* d3.js styles
+*******************************************************************************/
+body.path-report-analytics .series .line {
+    fill: none;
+    stroke-width: 2px;
+}
+
+body.path-report-analytics .groupedbar,
+body.path-report-analytics .serieschart .legend,
+body.path-report-analytics image.legendcontrol,
+body.path-report-analytics .d3helptooltip {
+    cursor: pointer;
+}
+
+body.path-report-analytics .piechart {
+    font: 10px sans-serif;
+    position: relative;
+    height: 500px;
+    width: 960px;
+}
+
+body.path-report-analytics .axis text {
+    font-size: 12px;
+}
+
+body.path-report-analytics .axis path,
+body.path-report-analytics .axis line {
+    fill: none;
+    shape-rendering: crispEdges;
+}
+
+body.path-report-analytics .legend text {
+    font: 10px sans-serif;
+}
+
+body.path-report-analytics .d3-tip {
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+    background: rgba(85, 89, 92, 0.8);
+    color: #fff;
+    border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+body.path-report-analytics .d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(85, 89, 92, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+}
+
+/* Style northward tooltips differently */
+body.path-report-analytics .d3-tip.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+}
+
+body.path-report-analytics .d3title {
+    text-anchor: middle;
+    font-style: italic;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+}
+
+body.path-report-analytics g.qxgrid .tick,
+body.path-report-analytics g.qygrid .tick {
+    stroke: #666666;
+}
+
+body.path-report-analytics g.qxgrid .domain,
+body.path-report-analytics g.qygrid .domain {
+    fill: none;
+}
+
+/*******************************************************************************
+* Filter Layout
+*******************************************************************************/
+body.path-report-analytics .filterheader .select {
+    width: 186px;
+    float: left;
+    margin: 0 8px 0 0;
+    padding: 0;
+    -webkit-appearance: menulist;
+    -moz-appearance: menulist;
+}
+
+body.path-report-analytics .filterheader .select[multiple="multiple"],
+body.path-report-analytics .filterheader .select.single,
+body.path-report-analytics .criteria > ul > li.custom-select {
+    background-image: none;
+}
+
+body.path-report-analytics .filterheader .select.ms-parent {
+    border: 0px solid #fff;
+}
+
+body.path-report-analytics .filterheader .select.single,
+body.path-report-analytics .coursefiltercontainer .select.single {
+    float: left;
+    margin: 3px 4px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    height: 26px;
+    line-height: 26px;
+}
+
+body.path-report-analytics .filterheader {
+    display: inline-block;
+    border: 1px solid #E3E3E3;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    width: 560px;
+}
+
+/* padding/border of .alert is 51px */
+body.path-report-analytics .filterstatustext,
+body.path-report-analytics .chartheader .filterstatustext,
+body.path-report-analytics .addstatustext {
+    width: 509px;
+    margin-bottom: 5px;
+}
+
+body.path-report-analytics .filterheader .helptooltip {
+    float: left;
+    margin: 4px;
+    padding: 2px;
+}
+
+body.path-report-analytics .filterheader > label,
+body.path-report-analytics .filterheader .advancedfilters > label,
+body.path-report-analytics .filterheader div[class$="container"] > label,
+body.path-report-analytics .filterheader .criterialabel > label,
+body.path-report-analytics .coursefiltercontainer > label {
+    float: left;
+    margin: 4px;
+    padding: 0px 12px;
+    font-weight: bold;
+    height: 24px;
+    min-width: 94px;
+}
+
+body.path-report-analytics .coursefiltercontainer {
+    display: none;
+}
+
+body.path-report-analytics .gradefiltercontainer {
+    float: left;
+}
+
+body.path-report-analytics .filterheader .select label {
+    float: none;
+}
+
+body.path-report-analytics .filterheader .advancedtoggle {
+    cursor: pointer;
+}
+
+body.path-report-analytics .chartheader button.ms-choice,
+body.path-report-analytics .recipientfiltercontainer button.ms-choice {
+    margin: 3px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+body.path-report-analytics .chartheader button.applyfilter {
+    margin: 5px 0;
+}
+
+body.path-report-analytics .filterheader .advancedfilters {
+    display: none;
+    padding: 0;
+    margin: 0;
+}
+
+body.path-report-analytics .filterheader .advancedtoggle {
+    float: right;
+}
+
+body.path-report-analytics .filterheader div.binslider {
+    float: left;
+    margin: 10px 8px;
+    padding: 0;
+    width: 150px;
+    height: 12px;
+}
+
+body.path-report-analytics .filterheader input.binslidervalue {
+    float: left;
+    width: 25px;
+    height: 20px;
+    margin: 6px 0;
+    padding: 1px;
+    border: 0;
+    color: #f6931f;
+    font-weight: bold;
+    background-color: inherit;
+    box-shadow: 0 0 0;
+    border-radius: 0;
+}
+
+body.path-report-analytics .ms-drop {
+    margin-left: 5px;
+}
+
+body.path-report-analytics .ms-drop.bottom {
+    width: 300px;
+}
+
+body.path-report-analytics .ms-choice > div {
+    top: 4px;
+}
+
+body.path-report-analytics .ms-choice > span {
+    padding-top: 2px;
+    line-height: 26px;
+}
+
+body.path-report-analytics .filterheader input.uniquecheck {
+    float: left;
+    width: 14px;
+    height: 14px;
+    margin: 9px 4px;
+}
+
+body.path-report-analytics .dateselector .ms-drop {
+    width: 110px;
+    height: 74px;
+    margin-top: 2px;
+}
+
+body.path-report-analytics input.dateselector .ms-drop span {
+    cursor: pointer;
+}
+
+body.path-report-analytics .filterheader div[class$="filtercontainer"] > select[class$="operatorfilter"] {
+    width: 44px;
+}
+
+body.path-report-analytics .filterheader div[class$="filtercontainer"] > input,
+body.path-report-analytics input[type="text"].wordcount,
+body.path-report-analytics input[type="text"].usersperpage {
+    width: 60px;
+    height: 26px;
+    margin: 3px 4px;
+    padding: 0px 4px;
+    float: left;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+body.path-report-analytics .wordcloudcontainer {
+    border: 1px solid #E3E3E3;
+    background-color: #FFFFFF;
+}
+
+body.path-report-analytics .criterialabel {
+    float: left;
+    width: 110px;
+}
+
+body.path-report-analytics .criteria {
+    width: 515px;
+    float: left;
+}
+
+body.path-report-analytics .criteria > ul > li {
+    padding: 2px 3px 2px 5px;
+    margin: 4px 5px 4px 0;
+    float: left;
+    list-style-type: none;
+    -moz-border-radius:6px 6px 6px 6px;
+    -webkit-border-radius:6px 6px 6px 6px;
+    -o-border-radius:6px 6px 6px 6px;
+}
+
+body.path-report-analytics .criteria > ul > li .removecriterion {
+    width: 7px;
+    height: 7px;
+    margin: 1px 0px 10px 3px;
+    cursor: pointer;
+}
+
+/*******************************************************************************
+* Posts styling tweaks
+*******************************************************************************/
+body.path-report-analytics .d3chart > h2,
+body.path-report-analytics .d3chart .forumheader > h3 {
+    font-weight: bold;
+}
+
+body.path-report-analytics .d3chart .forumheader > h3 {
+    display: inline;
+}
+
+body.path-report-analytics .d3chart .forumheader > p {
+    display:inline;
+    margin-left: 9px;
+}
+
+/*******************************************************************************
+* Adjusting spacing on moodle forms elements for cleaner rendering
+*******************************************************************************/
+body.path-report-analytics #region-main .filterheader .col-md-9 {
+    margin: 0;
+    padding: 0;
+    flex: 0 0 480px;
+    max-width: 480px;
+}
+
+body.path-report-analytics .filterheader .mform > .form-group {
+    margin: 0 -15px 2px 0px;
+}
+
+body.path-report-analytics #region-main .filterheader .col-md-3 {
+    flex: 0 0 80px;
+    margin: 4px 0 4px 4px;
+    padding: 4px 12px;
+    font-weight: bold;
+}
+
+body.path-report-analytics #region-main .filterheader .col-md-3 > label {
+    font-weight: bold;
+}
+
+body.path-report-analytics.jsenabled .chartheader .visibleifjs {
+    display: none;
+}
+
+body.path-report-analytics #graphchooserform .moodle-dialogue-hd .yui3-widget-buttons {
+    padding: 0;
+}
+
+/*******************************************************************************
+* Icon styling.
+*******************************************************************************/
+body.path-report-analytics .layoutmenu i {
+    width: auto;
+    height: auto;
+    margin: 5px;
+}
+
+body.path-report-analytics .layoutmenu {
+    border: 1px solid #666;
+    border-radius: 3px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05) inset;
+    float: right;
+    display: inline-flex;
+}
+
+body.path-report-analytics .d3export i {
+    margin: 3px;
+    float: right;
+}
+
+body.path-report-analytics .d3plus i,
+body.path-report-analytics .scheduledreport i {
+    padding-top: 2px;
+}
+
+body.path-report-analytics .layoutmenu i,
+body.path-report-analytics .d3export i,
+body.path-report-analytics .dateselector i,
+body.path-report-analytics .addcriterion i,
+body.path-report-analytics .dateselector ul {
+    cursor: pointer;
+}
+
+body.path-report-analytics .layoutmenu i,
+body.path-report-analytics .d3export i,
+body.path-report-analytics .dateselector i {
+    font-size: 20px;
+}
+
+body.path-report-analytics div.addcriterion {
+    float: left;
+    margin: 6px 0px;
+    height: 24px;
+}
+
+body.path-report-analytics .filterheader .closebutton,
+body.path-report-analytics .wordcloudcontainer .wordcloudclosebutton {
+    float: right;
+}
+
+body.path-report-analytics .filterheader .closebutton i,
+body.path-report-analytics .wordcloudcontainer .wordcloudclosebutton i {
+    float: right;
+    vertical-align: middle;
+    display: inline-block;
+    cursor: pointer;
+    padding: 0;
+    border-style: none;
+    margin-right: 0;
+}
+
+body.path-report-analytics .wordcloudcontainer .pngexport i {
+    font-size: 20px;
+    padding: 0px;
+    margin: 3px;
+    float: left;
+    cursor: pointer;
+}
+
+body.path-report-analytics .filterheader i.fa-question-circle,
+body.path-report-analytics div.addcriterion i {
+    font-size: 16px;
+    margin: 7px 6px 7px 0;
+}
+
+body.path-report-analytics .d3chart i.fa-arrow-up {
+    font-size: 200px;
+    width: 500px;
+    height: 200px;
+}
+
+body.path-report-analytics div.addcriterion i {
+    display: none;
+}
+
+body.path-report-analytics .chartheader .chartplaceholder .icon {
+    width: auto;
+    height: auto;
+}
+
+/*******************************************************************************
+* Responsive styling:
+* single column -> 900px
+* two column OR device < 1280px -> 640px
+*******************************************************************************/
+body.path-report-analytics .chartheader.col-md-12 {
+    min-width: 900px;
+}
+
+body.path-report-analytics .chartheader.col-md-12 .d3export {
+    width: 900px;
+}
+
+body.path-report-analytics .chartheader.col-md-6 {
+    min-width: 600px;
+    padding-right: 0px;
+}
+
+body.path-report-analytics .chartheader.col-md-6 .d3export {
+    width: 600px;
+}
+
+body.path-report-analytics .jschooser .choosercontainer #chooseform .alloptions {
+    max-width: 344px;
+}
+
+body.path-report-analytics .jschooser .choosercontainer #chooseform .alloptions .option .typename {
+    width: auto;
+}
+
+/* Low res devices (i.e., iphones) */
+@media (max-width: 700px) {
+    body.path-report-analytics .jschooser .moduletypetitle,
+    body.path-report-analytics .jschooser .choosercontainer #chooseform .instruction {
+        display: none;
+    }
+
+    body.path-report-analytics .jschooser .choosercontainer #chooseform .typesummary {
+        position: static;
+        left: 0;
+    }
+
+    body.path-report-analytics .jschooser.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd {
+        font-size: 10px;
+    }
+
+    body.path-report-analytics .jschooser .choosercontainer #chooseform .alloptions {
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 1280px) {
+    body.path-report-analytics .chartheader.col-md-12,
+    body.path-report-analytics .chartheader.col-md-6 {
+        min-width: 600px;
+    }
+
+    body.path-report-analytics .chartheader.col-md-12 .d3export,
+    body.path-report-analytics .chartheader.col-md-6 .d3export {
+        width: 600px;
+    }
+}
+
+/* Hide view toggle if screensize is less than 1600px */
+@media (max-width: 1600px) {
+    body.path-report-analytics .layoutmenu {
+        display: none;
+    }
+}
+
+/*******************************************************************************
+* User Table styles
+*******************************************************************************/
+body.path-report-analytics .d3chart table tr > td {
+    border: 2px solid #EEEEEE;
+}
+
+body.path-report-analytics .d3chart table tr > td.name,
+body.path-report-analytics .d3chart table tr > td.email {
+    min-width: 200px;
+}
+
+body.path-report-analytics .d3chart table tr:nth-child(odd) > td {
+    background-color: #F9F9F9
+}
+
+body.path-report-analytics .d3chart input.selectall,
+body.path-report-analytics .d3chart input.selectuser {
+    margin-left: 7px;
+}
+
+body.path-report-analytics .d3chart .page {
+    display: inline-block;
+    cursor: pointer;
+    color: #007c43;
+    text-align: center;
+}
+
+body.path-report-analytics .d3chart .page.current {
+    color: #515151;
+}
+
+/*******************************************************************************
+* Main page styles
+*******************************************************************************/
+body.path-report-analytics .d3plus,
+body.path-report-analytics .scheduledreport,
+body.path-report-analytics .scheduled-add,
+body.path-report-analytics .scheduled-save {
+    display:inline-flex;
+    padding: 6px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+body.path-report-analytics .d3plus,
+body.path-report-analytics .scheduled-add {
+    margin: 2px 2px 2px 25px;
+}
+
+body.path-report-analytics .scheduledreport,
+body.path-report-analtyics .scheduled-save {
+    margin: 2px 2px 2px 2px;
+}
+
+body.path-report-analytics .d3plus,
+body.path-report-analytics .scheduledreport,
+body.path-report-analytics .scheduled-add,
+body.path-report-analytics .scheduled-save {
+    cursor: pointer;
+}
+
+body.path-report-analytics .d3plus i,
+body.path-report-analytics .scheduledreport i, {
+    vertical-align: inherit;
+    padding: 0 5px;
+}
+
+body.path-report-analytics .chartplaceholder {
+    margin-top: 10px;
+}
+
+body.path-report-analytics .clear {
+    clear: both;
+}
+
+body.path-report-analytics .jschooser .alloptions {
+    min-height: 280px;
+    max-height: 550px;
+}
+
+body.path-report-analytics .jschooser .chooserdialoguebody {
+    display: block;
+}
+
+body.path-report-analytics .modal-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: .50;
+    -webkit-opacity: .5;
+    -moz-opacity: .5;
+    filter: alpha(opacity=50);
+    z-index: 1000;
+}
+
+body.path-report-analytics .userpostschart .d3chart h2,
+body.path-report-analytics .userpostschart .d3chart h3 {
+    margin: 3px 0;
+}
+
+body.path-report-analytics #chartcontainer {
+    font-size: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+body.path-report-analytics #region-main {
+    border: none;
+}
+
+/*******************************************************************************
+* Tweaks for scheduled report page.
+*******************************************************************************/
+body#page-report-analytics-scheduled #chartcontainer .chartplaceholder {
+    display: none;
+}
+
+body#page-report-analytics-scheduled #region-main div.save-spinner {
+    display: inline-block;
+    margin: 0;
+    line-height: 34px;
+    vertical-align: top;
+}
+
+body#page-report-analytics-scheduled #region-main > div[role="main"] > .filterheader {
+    margin: 0 0 0 25px;
+}

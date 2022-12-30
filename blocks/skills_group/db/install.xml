@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/skills_group/db" VERSION="20110712" COMMENT="XMLDB file for Moodle blocks/skills_group"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="skills_group_settings" COMMENT="This table contains the skills_group settings for a particular course" NEXT="skills_group">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" NEXT="courseid"/>
+        <FIELD NAME="courseid" TYPE="int" LENGTH="20" NOTNULL="true" UNSIGNED="false" SEQUENCE="false" PREVIOUS="id" NEXT="prefeedbackid"/>
+        <FIELD NAME="prefeedbackid" TYPE="int" LENGTH="20" NOTNULL="true" UNSIGNED="false" SEQUENCE="false" PREVIOUS="courseid" NEXT="postfeedbackid"/>
+        <FIELD NAME="postfeedbackid" TYPE="int" LENGTH="20" NOTNULL="true" DEFAULT="0" UNSIGNED="false" SEQUENCE="false" PREVIOUS="prefeedbackid" NEXT="groupingid"/>
+        <FIELD NAME="groupingid" TYPE="int" LENGTH="20" NOTNULL="true" UNSIGNED="false" SEQUENCE="false" PREVIOUS="postfeedbackid" NEXT="maxsize"/>
+        <FIELD NAME="maxsize" TYPE="int" LENGTH="20" NOTNULL="true" UNSIGNED="false" SEQUENCE="false" PREVIOUS="groupingid" NEXT="threshold"/>
+        <FIELD NAME="threshold" TYPE="int" LENGTH="20" NOTNULL="true" DEFAULT="1" UNSIGNED="false" SEQUENCE="false" PREVIOUS="maxsize" NEXT="date"/>
+        <FIELD NAME="date" TYPE="int" LENGTH="20" NOTNULL="false" SEQUENCE="false" PREVIOUS="threshold" NEXT="allownaming"/>
+        <FIELD NAME="allownaming" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="1" UNSIGNED="false" SEQUENCE="false" PREVIOUS="date" NEXT="instructorgroups"/>
+        <FIELD NAME="instructorgroups" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" UNSIGNED="false" SEQUENCE="false" PREVIOUS="allownaming" NEXT="allowadding"/>
+        <FIELD NAME="allowadding" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="1" UNSIGNED="false" SEQUENCE="false" PREVIOUS="instructorgroups"  NEXT="allowgroupview"/>
+        <FIELD NAME="allowgroupview" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="1" UNSIGNED="false" SEQUENCE="false" PREVIOUS="allowadding"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="skills_group" COMMENT="This table contains information about the group" PREVIOUS="skills_group_settings" NEXT="skills_group_student">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" NEXT="groupid"/>
+        <FIELD NAME="groupid" TYPE="int" LENGTH="20" NOTNULL="true" UNSIGNED="false" SEQUENCE="false" PREVIOUS="id" NEXT="allowjoin"/>
+        <FIELD NAME="allowjoin" TYPE="int" LENGTH="20" NOTNULL="true" UNSIGNED="false" SEQUENCE="false" PREVIOUS="groupid" NEXT="note"/>
+        <FIELD NAME="note" TYPE="text" LENGTH="big" NOTNULL="false" UNSIGNED="false" SEQUENCE="false" PREVIOUS="allowjoin"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="skills_group_student" COMMENT="This table contains information about whether a student has locked in their choice" PREVIOUS="skills_group">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" NEXT="userid"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="20" NOTNULL="true" UNSIGNED="false" SEQUENCE="false" PREVIOUS="id" NEXT="groupingid"/>
+        <FIELD NAME="groupingid" TYPE="int" LENGTH="20" NOTNULL="true" DEFAULT="0" UNSIGNED="false" SEQUENCE="false" PREVIOUS="userid" NEXT="finalizegroup"/>
+        <FIELD NAME="finalizegroup" TYPE="int" LENGTH="20" NOTNULL="true" UNSIGNED="false" SEQUENCE="false" PREVIOUS="groupingid"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="skills_group_mapping" COMMENT="This table contains information about how to handle mapping of IDs for accreditation" PREVIOUS="skills_group_student">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" NEXT="position"/>
+        <FIELD NAME="position" TYPE="int" LENGTH="20" NOTNULL="true" UNSIGNED="false" SEQUENCE="false" PREVIOUS="id" NEXT="courseid"/>
+        <FIELD NAME="courseid" TYPE="int" LENGTH="20" NOTNULL="true" UNSIGNED="false" SEQUENCE="false" PREVIOUS="position" NEXT="accreditationid"/>
+        <FIELD NAME="accreditationid" TYPE="int" LENGTH="20" NOTNULL="true" UNSIGNED="false" SEQUENCE="false" PREVIOUS="courseid"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>

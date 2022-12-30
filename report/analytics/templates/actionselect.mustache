@@ -1,0 +1,70 @@
+{{!
+This file is part of Moodle - http://moodle.org/
+
+Moodle is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Moodle is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+@template report_analytics/actionselect
+
+Template for a action selector (action/grade filter).
+
+Classes required for JS:
+* none
+
+Data attributes required for JS:
+* none
+
+Context variables required for this template:
+* action {label, type, helptooltip, options, attributes}
+* grade {items, operators, gradehelptooltip}
+
+}}
+{{< report_analytics/studentselect }}
+
+{{$ label }}
+    <label> {{# str }} addcondition, report_analytics {{/ str }} </label>
+{{/ label }}
+
+{{$ altbutton }}
+    <button type="button" class="filterbutton btn btn-secondary" value="action">
+        {{# str }} actions {{/ str }}
+    </button>
+{{/ altbutton }}
+
+{{$ altselect }}
+    <div class="actionfiltercontainer" style="display: none;">
+        {{# activity }}
+            {{> report_analytics/selectfilter }}
+        {{/ activity }}
+        <div class="clear"></div>
+        {{# action }}
+            {{> report_analytics/selectfilter }}
+        {{/ action }}
+        {{# operators }}
+            {{> report_analytics/selectfilter }}
+        {{/ operators }}
+        <input type="text" class="valuefilter form-control" name="actionvalue" />
+    </div>
+{{/ altselect}}
+
+{{$ selectfooter }}
+    <div class="addcriterion">
+        {{# pix }} t/add, core,{{# str}} addcriterionalt, report_analytics {{/ str}}{{/ pix }}
+    </div>
+    <div class="clear"></div>
+    <div class="criterialabel"><label>{{# str }} conditions, report_analytics {{/ str}}</label></div>
+    <div class="criteria"><ul></ul></div>
+{{/ selectfooter }}
+
+{{/ report_analytics/studentselect }}

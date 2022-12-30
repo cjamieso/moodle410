@@ -1,0 +1,86 @@
+{{!
+This file is part of Moodle - http://moodle.org/
+
+Moodle is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Moodle is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+@template report_analytics/chart
+
+Template for a base report_analytics chart.
+
+Classes required for JS:
+* chartheader, filterheader, closebutton, dateselector, advancedfilters, advancedtoggle, showadvanced, hideadvanced, d3button,
+* applyfilter filterstatustext, d3export, graphpladeholder
+
+Data attributes required for JS:
+* none
+
+Context variables required for this template:
+* chartname the name of the chart (Capital Case)
+* chartnamelower the name of the chart (all lower case)
+* time used to generate unique IDs
+* datefilter the HTML (moodle forms) for the date filter
+* presetdates {date, text}
+
+}}
+<div class="chartheader {{chartnamelower}}">
+    <input name="graphtype" value="{{chartname}}" type="hidden">
+    <div class="filterheader" style="display: inline-block;">
+        <div class="closebutton">
+            {{# pix}} e/cancel, core, {{# str}} closebuttonalt, report_analytics {{/ str}}{{/ pix}}
+        </div>
+        {{$ basicfilters }}
+        {{/ basicfilters }}
+        {{# datefilter }}
+            {{{ datefilter }}}
+            <div class="dateselector" style="display: none;">
+                {{# pix }} e/insert_date, core, {{# str }} dateselectoralt, report_analytics {{/ str }} {{/ pix }}
+                <div class="ms-drop form-control" style="display: none;">
+                    <ul>
+                        {{# presetdates }}
+                            <span value="{{{date}}}">{{text}}</span>
+                        {{/ presetdates }}
+                    </ul>
+                </div>
+            </div>
+        {{/ datefilter }}
+        {{# advanced }}
+            <div class="clear"></div>
+            <div class="advancedfilters">
+                {{$ advancedfilters }}
+                {{/ advancedfilters }}
+            </div>
+            <div class="clear"></div>
+            <div class="advancedtoggle">
+                <div class="showadvanced" style="display: inline;">{{# str }} show {{/ str}}</div>
+                <div class="hideadvanced" style="display: none;">{{# str }} hide {{/ str }}</div>
+                {{# str }} advanced {{/ str }}
+                {{# pix }} i/settings, core, {{# str}} advancedtoggle, report_analytics {{/ str}} {{/ pix}}
+            </div>
+        {{/ advanced }}
+    </div>
+    <div class="clear"></div>
+    {{$ filter }}
+        <button class="d3button applyfilter btn btn-secondary" type="button">{{# str }} applyfilterbutton, report_analytics {{/ str }}</button>
+        <div class="filterstatustext"></div>
+    {{/ filter }}
+    <div class="d3export"></div>
+    <div id="d3chart{{time}}" class="d3chart">
+        {{$ placeholder }}
+            {{# pix }} i/up, core,{{# str }} applyfilteralt, report_analytics {{/ str }}{{/ pix }}
+        {{/ placeholder }}
+    </div>
+    {{$ footer }}
+    {{/ footer }}
+</div>
