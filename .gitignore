@@ -56,3 +56,9 @@ moodle-plugin-ci.phar
 .hugo_build.lock
 phpcs.xml
 jsconfig.json
+**/amd/build/*
+moodle-docker/
+local/codechecker
+local/eclass
+/lib/testing/lib.php
+
