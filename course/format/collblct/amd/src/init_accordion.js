@@ -39,7 +39,7 @@ define(['jquery', 'format_collblct/jquery.nestedAccordion'], function($) {
         var total_indents_to_remove = 15;
 
         for(var i = 1; i < total_indents_to_remove; i++) {
-            var classname = 'mod-indent-' + i.toString();
+            var classname = 'indent-' + i.toString();
             var selector = '#section-' + sectionnumber + ' .accordion div';
             $(selector).removeClass(classname);
         }
@@ -57,7 +57,7 @@ define(['jquery', 'format_collblct/jquery.nestedAccordion'], function($) {
             var idtag = '#module-' + moddepths.modid[i];
             var indent = moddepths.moddepth[i];
             if(indent >= 1) {
-                $(idtag).find(".mod-indent").addClass("mod-indent-" + indent.toString());
+                $(idtag).find(".activity-item").addClass("indent-" + indent.toString());
             }
         }
     }

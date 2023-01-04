@@ -25,10 +25,10 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version      = 2018022800;
-$plugin->requires     = 2017111301;
+$plugin->version      = 2022010300;
+$plugin->requires     = 2022041900.00;
 $plugin->component    = 'report_analytics';
-$plugin->release      = 'v0.5.0';
-$plugin->maturity     = MATURITY_BETA;
+$plugin->release      = 'v0.5.1';
+$plugin->maturity     = MATURITY_STABLE;
 $plugin->cron         = 0;
 $plugin->dependencies = array('local_d3js' => 2018021600);

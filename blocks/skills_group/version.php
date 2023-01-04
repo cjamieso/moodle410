@@ -25,10 +25,10 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version            = 2020102100;
+$plugin->version            = 2022010300;
 $plugin->component          = 'block_skills_group';
-$plugin->requires           = 2017111301;
+$plugin->requires           = 2022041900.00;
 $plugin->cron               = 0;
 $plugin->maturity           = MATURITY_STABLE;
-$plugin->release            = '1.1.0';
+$plugin->release            = '1.1.1';
 $plugin->dependencies       = array('local_d3js' => 2018021600);

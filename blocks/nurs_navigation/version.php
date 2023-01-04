@@ -25,9 +25,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version            = 2019030600;
+$plugin->version            = 2022010300;
 $plugin->component          = 'block_nurs_navigation';
-$plugin->requires           = 2017111301;
+$plugin->requires           = 2022041900.00;
 $plugin->cron               = 0;
 $plugin->maturity           = MATURITY_STABLE;
-$plugin->release            = '1.1.2 (Build: 2018032600)';
+$plugin->release            = '1.1.3 (Build: 2022010300)';
