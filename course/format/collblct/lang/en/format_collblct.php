@@ -484,19 +484,3 @@ $string['versionstable'] = 'Stable version - Could contain bugs.  Check on a tes
 // Privacy.
 $string['privacy:metadata:preference:toggle'] = 'The state of the toggles on a course.';
 $string['privacy:request:preference:toggle'] = 'The course id "{$a->name}" has the value "{$a->value}" which represents "{$a->decoded}" for the state of the toggles.';
-
-// HOOK: Craig's Strings.
-// The color editing page.
-$string['editsettingslink'] = "Change collapsed label settings for this course";
-$string['editcolorspageheader'] = "Change foreground and background label colors for course";
-$string['editcolorsheader'] = "Input foreground and background colors:";
-$string['foregroundcolor'] = "Foreground (text) color for labels:";
-$string['backgroundcolor'] = "Background color for labels:";
-$string['returndefault'] = "Reset course colors to default values:";
-
-// Added for access to color editor.
-$string['noaccess'] = 'You have no access to this page.  Please contact a system administrator if you believe this is an error.';
-$string['invalidcolor'] = 'Enter a valid RGB color - # and then 6 characters';
-
-// Capability.
-$string['collblct:caneditcollapsedlabelcolors'] = 'Can change label colors';

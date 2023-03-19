@@ -39,6 +39,7 @@
     z-index: 1;
 }
 
+
 /* Icon sets.  Note: Background images for the settings - does not work in Chrome or Safari - known issue. */
 /* Arrow icon set. */
 .course-content ul.ctopics li.section .content .toggle-arrow span.toggle_closed,
@@ -541,11 +542,21 @@ body.jsenabled #collblct-display-instructions {
 
 /* Print styles. */
 @media print {
+    body.jsenabled .toggledsection {
+        display: block; /* If JavaScript is enabled and we are printing then this css will apply and the section will be shown. */
+    }
     body.jsenabled #toggle-all, body.jsenabled #collblct-display-instructions, .cttoggle {
         display: none;
     }
+    .course-content ul.ctopics li.section.main {
+        float: left;
+    }
     body.format-collblct .course-content ul.ctopics li.section.main {
         padding-bottom: 0;
+    }
+    ul.ctopics {
+        page-break-after: avoid;
+        page-break-before: avoid;
     }
 }
 
@@ -650,3 +661,4 @@ body.jsenabled #collblct-display-instructions {
 .section .accordion div .activity .mod-indent-outer {
     padding-left: 0px;
 }
+

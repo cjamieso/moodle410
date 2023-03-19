@@ -26,7 +26,7 @@ Copy over this file (collblct_changes.txt) and update instructions (if any)
 
 ---
 
-Anthony's notes from 4.0 update: 
+Anthony's notes from 4.0 update:
 
 -I followed the notes above to make the changes with the updated topcoll plugin in here. However there was some concerns:
 
@@ -52,7 +52,7 @@ Anthony's notes from 4.0 update:
         /*-------------------------------------------------------------------------->
          * END HOOK
          *<------------------------------------------------------------------------*/
--For the hook above to have an effect, I had to change the line above from a return to an echo, followed by the hook section. Could not test this though as we don't have an environment to deploy to yet.  
+-For the hook above to have an effect, I had to change the line above from a return to an echo, followed by the hook section. Could not test this though as we don't have an environment to deploy to yet.
 
         /*-------------------------------------------------------------------------->
          * HOOK
@@ -70,4 +70,4 @@ Anthony's notes from 4.0 update:
          *<------------------------------------------------------------------------*/
 -For the hook above to get reached, I had to move it up a line from the bottom so that the new return line below could still get called after (return $content;)
 
--Overall, renderer seems to have changed quite a bit, perhaps trying out the 311 copy as a complete replacement might work if this doesn't? Or maybe Craig has some insite on what to do in here and can take a look or update it. I am not sure this is going to work as is once we have somewhere to deploy this to and can test it out. 
+-Overall, renderer seems to have changed quite a bit, perhaps trying out the 311 copy as a complete replacement might work if this doesn't? Or maybe Craig has some insite on what to do in here and can take a look or update it. I am not sure this is going to work as is once we have somewhere to deploy this to and can test it out.
