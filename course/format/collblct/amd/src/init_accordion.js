@@ -16,7 +16,7 @@
 /* eslint-disable */
 define(['jquery', 'format_collblct/jquery.nestedAccordion'], function($) {
 
-    var background_color, foreground_color;
+    var background_color, foreground_color, totalsections;
 
     /**
      * Print the accordion tag so that the menu gets styled.
@@ -78,7 +78,6 @@ define(['jquery', 'format_collblct/jquery.nestedAccordion'], function($) {
         $("html").addClass("js");
         $.fn.accordion.defaults.container = false;
         $(function (){
-            var totalsections = 30;
             for (var i = 0; i < totalsections; i++) {
                 var stringnum = i.toString();
                 $("#acc" + stringnum).accordion({
@@ -147,6 +146,15 @@ define(['jquery', 'format_collblct/jquery.nestedAccordion'], function($) {
         color_init: function(moodlebackgroundcolor, moodleforegroundcolor) {
             background_color = moodlebackgroundcolor;
             foreground_color = moodleforegroundcolor;
+        },
+
+        /**
+         * Save total number of sections for rendering later
+         *
+         * @param  {string}  moodletotalsections  the total number of sections in the course
+         */
+        total_sections: function(moodletotalsections) {
+            totalsections = moodletotalsections;
         }
     };
 

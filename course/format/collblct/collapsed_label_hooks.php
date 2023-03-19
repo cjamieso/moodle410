@@ -43,6 +43,8 @@ function init_collapsed_labels() {
     $colorrecord = new course_color_record($COURSE->id);
     $PAGE->requires->js_call_amd('format_collblct/init_accordion', 'color_init', array($colorrecord->get_background_color(),
                                       $colorrecord->get_foreground_color()));
+    $PAGE->requires->js_call_amd('format_collblct/init_accordion', 'total_sections',
+                                      array(ctwcl_get_number_of_sections($COURSE->id)));
 }
 
 /**
