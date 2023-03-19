@@ -542,21 +542,11 @@ body.jsenabled #collblct-display-instructions {
 
 /* Print styles. */
 @media print {
-    body.jsenabled .toggledsection {
-        display: block; /* If JavaScript is enabled and we are printing then this css will apply and the section will be shown. */
-    }
-    body.jsenabled #toggle-all, body.jsenabled #collblct-display-instructions, .cttoggle {
+    body.jsenabled #collblct-display-instructions {
         display: none;
-    }
-    .course-content ul.ctopics li.section.main {
-        float: left;
     }
     body.format-collblct .course-content ul.ctopics li.section.main {
         padding-bottom: 0;
-    }
-    ul.ctopics {
-        page-break-after: avoid;
-        page-break-before: avoid;
     }
 }
 

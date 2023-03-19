@@ -1,4 +1,4 @@
-@format @format_collblct @wip
+@format @format_collblct
 Feature: View collapsed labels in other languages
   In order to view collapsed labels in French
   As an user
